@@ -90,7 +90,7 @@ export const skillCategories = [
     skills: [
       "HTML",
       "CSS",
-      "JavaScript",
+      "JavaScript/TypeScript",
       "React",
       "React Native",
       "Next.js",
