@@ -3,14 +3,14 @@ export default function Section({
   subheading,
   secondary,
   children,
-}: {
+}: Partial<{
   heading: string;
   subheading: string;
   secondary: string;
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <section className="py-32 container mx-auto px-4">
+    <section className="py-16 md:py-32 container mx-auto px-4">
       <div className="text-center">
         <p className="text-primary font-bold uppercase">{subheading}</p>
         <h2 className="my-4 text-pretty text-4xl font-bold lg:text-6xl">

@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Section from "./shared/section";
 
 export default function About() {
   return (
-    <section className="py-32 bg-primary/10" id="about">
-      <div className="container mx-auto">
+    <div className="bg-primary/10" id="about">
+      <Section>
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="flex justify-center items-center">
             <Image
@@ -32,7 +33,7 @@ export default function About() {
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </Section>
+    </div>
   );
 }

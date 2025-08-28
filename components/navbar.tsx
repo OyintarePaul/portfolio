@@ -1,5 +1,4 @@
 "use client";
-
 import { MenuIcon } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -11,46 +10,23 @@ import {
 } from "@/components/ui/navigation-menu";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Link from "next/link";
-import Image from "next/image";
+import { cn } from "@/lib/utils";
+import { menuItems } from "@/constants";
 
 const Navbar = () => {
-  const menuItems = [
-    {
-      title: "Home",
-      href: "#home",
-    },
-    {
-      title: "About",
-      href: "#about",
-    },
-    {
-      title: "Projects",
-      href: "#projects",
-    },
-    {
-      title: "Skills",
-      href: "#skills",
-    },
-    {
-      title: "Testimonials",
-      href: "#testimonials",
-    },
-  ];
-
   return (
-    <section className="py-8 px-4 border-b">
+    <section className="py-8 px-4 border-b sticky top-0 z-50 bg-background shadow">
       <div className="container mx-auto">
         <nav className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-lg font-semibold">
-              EGRENBIDO OYINTARE PAUL
-            </span>
+            <span className="text-lg font-semibold">DEV PAUL</span>
           </Link>
           <NavigationMenu className="hidden lg:block">
             <NavigationMenuList>
@@ -80,30 +56,32 @@ const Navbar = () => {
             <SheetContent side="top" className="max-h-screen overflow-auto">
               <SheetHeader>
                 <SheetTitle>
-                  <Link
-                    href="https://www.shadcnblocks.com"
-                    className="flex items-center gap-2"
-                  >
-                    <Image
-                      src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
-                      className="max-h-8"
-                      alt="Shadcn UI Navbar"
-                    />
-                    <span className="text-lg font-semibold tracking-tighter">
-                      Shadcnblocks.com
-                    </span>
+                  <Link href="/" className="flex items-center gap-2">
+                    DEV PAUL
                   </Link>
                 </SheetTitle>
               </SheetHeader>
               <div className="flex flex-col p-4">
                 {menuItems.map((item, index) => (
-                  <Link href={item.href} className="font-medium" key={index}>
-                    {item.title}
-                  </Link>
+                  <SheetClose key={index} asChild>
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "font-medium p-6 w-full justify-start"
+                      )}
+                    >
+                      {item.title}
+                    </Link>
+                  </SheetClose>
                 ))}
 
-                <div className="mt-6 flex flex-col gap-4">
-                  <Button variant="outline">Let's Chat</Button>
+                <div className="mt-6 flex flex-col gap-4 w-min">
+                  <Button variant="outline" asChild>
+                    <SheetClose>
+                      <Link href="#contact">Let's Chat</Link>
+                    </SheetClose>
+                  </Button>
                 </div>
               </div>
             </SheetContent>

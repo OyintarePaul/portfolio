@@ -3,6 +3,29 @@ import { Globe, MapPin, Phone, Send } from "lucide-react";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FaSquareUpwork, FaXTwitter } from "react-icons/fa6";
 
+export const menuItems = [
+  {
+    title: "Home",
+    href: "#home",
+  },
+  {
+    title: "About",
+    href: "#about",
+  },
+  {
+    title: "Projects",
+    href: "#projects",
+  },
+  {
+    title: "Skills",
+    href: "#skills",
+  },
+  {
+    title: "Testimonials",
+    href: "#testimonials",
+  },
+];
+
 export const contactInfo = [
   {
     label: "Address",

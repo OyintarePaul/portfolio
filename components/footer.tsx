@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
-import {socialLinks} from "@/constants"
-
+import { socialLinks } from "@/constants";
+import Section from "./shared/section";
 
 export default function Footer() {
   return (
-    <section className="py-32 px-4 bg-primary/10">
-      <div className="container mx-auto">
+    <div className="bg-primary/10">
+      <Section>
         <div className="flex flex-col md:flex-row gap-4 justify-between">
           <p>Copyright ©2025 Egrenbido Oyintare</p>
           <ul className="flex gap-4 items-center">
@@ -22,7 +22,7 @@ export default function Footer() {
             ))}
           </ul>
         </div>
-      </div>
-    </section>
+      </Section>
+    </div>
   );
 }

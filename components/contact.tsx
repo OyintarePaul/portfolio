@@ -19,9 +19,10 @@ export default function Contact() {
             <ul className="flex flex-col gap-8">
               {contactInfo.map(({ label, value, href, Icon }, index) => (
                 <div className="flex gap-4 items-center" key={index}>
-                  <span className="size-16 flex items-center justify-center bg-primary rounded-full">
+                  <span className="size-16 flex shrink-0 items-center justify-center bg-primary rounded-full">
                     <Icon className="size-8 text-background" />
                   </span>
+
                   <div>
                     <p className="font-bold text-lg">{label}</p>
                     <Link

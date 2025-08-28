@@ -10,7 +10,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 md:px-12 lg:px-16">
         <div className="grid items-center gap-20 lg:grid-cols-2">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <h1 className="my-6 text-pretty text-4xl font-bold sm:text-6xl">
+            <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
               Hello, I'm Paul, <br /> a fullstack web <br />
               and mobile dev.
             </h1>
@@ -37,7 +37,7 @@ const Hero = () => {
             />
           </div>
         </div>
-        <div className="pt-16 grid sm:grid-cols-2 md:grid-cols-4 gap-8 justify-center item-center">
+        <div className="pt-16 grid sm:grid-cols-4 gap-x-8 gap-y-4">
           {socialLinks.map(({ title, Icon, description, href }) => (
             <Link href={href} key={title} target="_blank">
               <Card key={title} className="bg-transparent">
