@@ -5,7 +5,6 @@ import { Resend } from "resend";
 import { Contact } from "@/emails/contact";
 import { contactFormSchema } from "@/lib/zodSchemas";
 
-
 type ContactFormPayload = z.infer<typeof contactFormSchema>;
 
 interface SendEmailResponse {
@@ -18,7 +17,6 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function sendEmail(
   values: ContactFormPayload
 ): Promise<SendEmailResponse> {
-  
   const { success } = contactFormSchema.safeParse(values);
 
   if (!success) {

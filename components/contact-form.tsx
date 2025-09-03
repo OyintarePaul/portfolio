@@ -51,7 +51,7 @@ export default function ContactForm() {
         className="flex flex-3 flex-col gap-6"
         onSubmit={form.handleSubmit(handleSubmit)}
       >
-        <div className="flex flex-col md:flex-row md:gap-4 gap-6">
+        <div className="flex flex-col md:flex-row md:gap-4 gap-6 items-start">
           <FormField
             control={form.control}
             name="firstName"

@@ -1,7 +1,9 @@
+import {motion} from "motion/react"
 import Section from "./shared/section";
 import { Badge } from "./ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { skillCategories } from "@/constants";
+import SkillBadge from "./skill-badge";
 
 export default function Skills() {
   return (
@@ -19,8 +21,8 @@ export default function Skills() {
               </CardHeader>
               <CardContent>
                 <div className="flex gap-4 flex-wrap justify-center items-center">
-                  {skills.map((skill) => (
-                    <Badge key={skill}>{skill}</Badge>
+                  {skills.map((skill, index) => (
+                    <SkillBadge key={skill} skill={skill} index={index}/>
                   ))}
                 </div>
               </CardContent>
