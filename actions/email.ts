@@ -1,31 +1,37 @@
 "use server";
 
+import { z } from "zod";
 import { Resend } from "resend";
 import { Contact } from "@/emails/contact";
+import { contactFormSchema } from "@/lib/zodSchemas";
+
+
+type ContactFormPayload = z.infer<typeof contactFormSchema>;
 
 interface SendEmailResponse {
-  status: "idle" | "success" | "error";
+  status: "success" | "error";
   message: string;
 }
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-interface ContactFormPayload {
-  firstName: string;
-  lastName: string;
-  message: string;
-  userEmail: string;
-  subject: string;
-}
-
 export async function sendEmail(
-  _: {},
-  formData: FormData
+  values: ContactFormPayload
 ): Promise<SendEmailResponse> {
-  const rawData = Object.fromEntries(formData) as unknown as ContactFormPayload;
-  const { firstName, lastName, message, userEmail, subject } = rawData;
+  
+  const { success } = contactFormSchema.safeParse(values);
+
+  if (!success) {
+    return {
+      status: "error",
+      message: "There was an error sending your email",
+    };
+  }
+
+  const { firstName, lastName, message, userEmail, subject } = values;
+
   try {
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: ["devpaul3000@gmail.com"],
       subject,
@@ -39,8 +45,6 @@ export async function sendEmail(
         message: "Your message was not successful",
       };
     }
-
-    console.log(data);
 
     return {
       status: "success",

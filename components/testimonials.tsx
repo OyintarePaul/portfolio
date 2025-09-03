@@ -19,7 +19,7 @@ export default function Testimonials() {
               <CardContent className="flex flex-col h-full gap-8 justify-between">
                 <div className="flex gap-4">
                   <span>
-                    <Quote className="rotate-180 hidden md:block" size={40} />
+                    <Quote className="rotate-180 hidden lg:block" size={40} />
                   </span>
                   <div>{message}</div>
                 </div>
@@ -29,7 +29,7 @@ export default function Testimonials() {
                     width={48}
                     height={48}
                     alt=""
-                    className="size-12 rounded-full object-cover"
+                    className="size-12 rounded-full object-cover shrink-0"
                   />
                   <div>
                     <p className="text-lg font-bold text-primary">{name}</p>

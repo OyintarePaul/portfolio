@@ -12,7 +12,7 @@ export default function Contact() {
         secondary="Use the form below to send me an email. I usually respond within 60
           minutes."
       >
-        <div className="flex max-w-7xl flex-col gap-10 lg:flex-row lg:gap-20 mt-4 py-8 px-4 lg:px-12">
+        <div className="flex max-w-7xl flex-col gap-10 lg:flex-row lg:gap-20 mt-4 lg:px-12">
           <ContactForm />
 
           <div className="flex-2">
