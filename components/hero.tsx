@@ -10,11 +10,11 @@ const Hero = () => {
       <div className="container mx-auto px-4 md:px-12 lg:px-16">
         <div className="grid items-center gap-20 lg:grid-cols-2">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
-            <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl">
+            <h1 className="my-6 text-pretty text-4xl font-bold lg:text-6xl animate-in fade-in slide-in-from-left-8 duration-800">
               Hello, I'm Paul, <br /> a fullstack web <br />
               and mobile dev.
             </h1>
-            <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl">
+            <p className="text-muted-foreground mb-8 max-w-xl lg:text-xl animate-in fade-in slide-in-from-right-8 duration-800">
               I build fullstack, scalabale, performant and responsive websites
               and mobile applications that grow businesses. My core technologies
               include Node.js React, Next.js, Tailwind CSS, React Native,
@@ -46,7 +46,7 @@ const Hero = () => {
                     <Icon size={40} />
                     <span className="flex flex-col">
                       <span className="font-bold text-primary">{title}</span>
-                      <span>{description}</span>
+                      <span className="line-clamp-1">{description}</span>
                     </span>
                   </div>
                 </CardContent>

@@ -58,19 +58,19 @@ export const socialLinks = [
     Icon: FaLinkedinIn,
     title: "LinkedIn",
     description: "Connect with me",
-    href: "#",
+    href: "https://www.linkedin.com/in/oyintare-egrenbido-695b89246",
   },
   {
     Icon: FaSquareUpwork,
     title: "Upwork",
     description: "Hire me",
-    href: "#",
+    href: "",
   },
   {
     Icon: FaFacebookF,
     title: "Facebook",
     description: "Let's be friends",
-    href: "#",
+    href: "https://www.facebook.com/share/14NicwfGvi9/",
   },
   {
     Icon: FaXTwitter,
